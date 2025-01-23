@@ -1,6 +1,6 @@
 # 介绍
 
-[lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) 一个基于 `Vue 3` 生态系统的移动 web 应用模板，使用了最新的`Vue3.5`、`Vite6`、`Vant4`、`Pinia`、`Typescript`、`UnoCSS`等主流技术开发，内置了 `layout布局`、`请求封装`、`请求拦截``、登录拦截` 等基础功能，同时还提供了业务当中常用的组件，例如：`Dark Mode`、`i18n`、`Mock`、`ECharts`、`Pinia 持久化`、`KeepAlive` 等示例。采用模块化设计，无需额外配置，开箱即用，让开发者能够专注于业务逻辑的开发。
+[lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) 一个基于 `Vue 3` 生态系统的移动 web 应用模板，使用了最新的`Vue3.5`、`Vite6`、`Vant4`、`Pinia`、`Typescript`、`UnoCSS`等主流技术开发，内置了 `layout布局`、`请求封装`、`请求拦截`、`登录拦截` 等基础功能，同时还提供了业务当中常用的组件，例如：`Dark Mode`、`i18n`、`Mock`、`ECharts`、`Pinia 持久化`、`KeepAlive` 等示例。采用模块化设计，无需额外配置，开箱即用，让开发者能够专注于业务逻辑的开发。
 
 ## 在线预览
 
@@ -55,4 +55,4 @@
 
 ## 许可证
 
-[MIT](./LICENSE) License © 2023-PRESENT [sankeyangshu](https://github.com/sankeyangshu)
+[MIT](https://github.com/sankeyangshu/lemon-template-vue/blob/main/LICENSE) License © 2023-PRESENT [sankeyangshu](https://github.com/sankeyangshu)
