@@ -4,45 +4,45 @@
 </a>
 
 <h1 align="center">
-  LemonTemplate Documentation
+  LemonTemplate 官方文档
 </h1>
 
-English / [简体中文](./README.zh-CN.md)
+[English](./README.md) / 简体中文
 
 </div>
 
 ---
 
-## Introduction
+## 介绍
 
-[`LemonTemplate`](https://github.com/sankeyangshu/lemon-template-docs) is an out-of-the-box, open-source template for mobile web applications, built upon the latest front-end technology stack, including Vue3 / React18, TypeScript, Vite6, Pinia / Zustand, and UnoCSS. It comes pre-equipped with a rich array of theme configurations and functional components, adhering to rigorous code standards and employing a modular design that requires no additional setup, enabling developers to focus solely on business logic development. Furthermore, each template varies slightly due to differences in the technology stack used; specific details can be found in the respective template introductions. Whether for learning cutting-edge technologies or practical development, LemonTemplate serves as an excellent resource.
+[`LemonTemplate`](https://github.com/sankeyangshu/lemon-template-docs) 是一个开箱即用的移动端 Web 应用开源模板，基于最新的前端技术栈，包括 Vue3 / React18、TypeScript、Vite6、Pinia / Zustand 和 UnoCSS。它内置了丰富的主题配置和功能组件，代码规范严谨，采用模块化设计，无需额外配置，开箱即用，让开发者能够专注于业务逻辑的开发。此外每个模板由于使用的技术栈不同，存在一些差别，具体情况请看各个模板的介绍。无论是学习前沿技术还是实际开发，LemonTemplate 都是一个非常好的实践。
 
-## Features
+## 特性
 
-- **Cutting-Edge Technology Application**: Supports the latest popular technology stacks such as Vue3, React, Vite6, TypeScript, and UnoCSS.
-- **Clear Project Architecture**: Features a well-structured, elegant, and easy-to-understand layout.
-- **Strict Code Standards**: Integrated with eslint, prettier, and simple-git-hooks to ensure code standardization.
-- **TypeScript**: Enables strict type checking to enhance code maintainability.
-- **Rich Theme Configurations**: Comes with a variety of built-in theme configurations, perfectly integrated with UnoCSS.
-- **Built-in Internationalization Solution**: Facilitates easy implementation of multi-language support.
-- **Diverse Page Components**: Includes a wide range of built-in pages and components, such as a 404 page, layout components, theme configuration components, and permission verification components.
+- **前沿技术应用**：支持 Vue3 和 React, Vite6, TypeScript, UnoCSS 等最新流行的技术栈。
+- **清晰的项目架构**：结构清晰，优雅易懂。
+- **严格的代码规范**：集成了eslint, prettier 和 simple-git-hooks，保证代码的规范性。
+- **TypeScript**： 支持严格的类型检查，提高代码的可维护性。
+- **丰富的主题配置**：内置多样的主题配置，与 UnoCSS 完美结合。
+- **内置国际化方案**：轻松实现多语言支持。
+- **丰富的页面组件**：内置多样页面和组件，包括404页面，以及布局组件、主题配置组件和权限校验组件等。
 
-## Versions
+## 版本
 
-- **Vue Version:**
+- **Vue 版本:**
 
-  - [Preview Link](https://lemon-template-vue.vercel.app)
-  - [Github Repository](https://github.com/sankeyangshu/lemon-template-vue)
+  - [预览地址](https://lemon-template-vue.vercel.app)
+  - [Github 仓库](https://github.com/sankeyangshu/lemon-template-vue)
 
-- **React Version:**
+- **React 版本:**
 
-  - [Preview Link](https://lemon-template-react.vercel.app)
-  - [Github Repository](https://github.com/sankeyangshu/lemon-template-react)
+  - [预览地址](https://lemon-template-react.vercel.app)
+  - [Github 仓库](https://github.com/sankeyangshu/lemon-template-react)
 
-## Browser Support
+## 浏览器支持
 
-- For local development, we recommend using the latest version of Chrome. [Download](https://www.google.com/intl/en/chrome/).
-- The production environment supports modern browsers. IE is no longer supported. For more details on browser support, check [Can I Use ES Module](https://caniuse.com/?search=ESModule).
+- 本地开发推荐使用 Chrome 最新版浏览器 [Download](https://www.google.com/intl/zh-CN/chrome/)。
+- 生产环境支持现代浏览器，不在支持 IE 浏览器，更多浏览器可以查看 [Can I Use Es Module](https://caniuse.com/?search=ESModule)。
 
 | [<img src="https://i.imgtg.com/2023/04/11/8z7ot.png" alt=" IE" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt=" Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
