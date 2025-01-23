@@ -1,0 +1,43 @@
+{
+  "name": "lemon-template-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lemon Template 官方文档",
+  "author": {
+    "name": "sankeyangshu",
+    "email": "sankeyangshu@gmail.com",
+    "url": "https://github.com/sankeyangshu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sankeyangshu/lemon-template-docs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankeyangshu/lemon-template-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sankeyangshu/lemon-template-docs/issues"
+  },
+  "keywords": [
+    "vitepress",
+    "docs",
+    "lemon-template",
+    "Vue3",
+    "React"
+  ],
+  "engines": {
+    "node": "^18.18.0 || >=20.0.0",
+    "pnpm": ">=8.15.4"
+  },
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@sankeyangshu/eslint-config": "^0.2.2",
+    "eslint": "^9.18.0",
+    "typescript": "^5.7.3",
+    "vitepress": "^1.6.0"
+  }
+}
