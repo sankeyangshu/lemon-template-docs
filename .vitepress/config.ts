@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/lemon-template-docs/',
   title: 'LemonTemplate',
   description: 'Lemon Template 官方文档',
   cleanUrls: true,
@@ -11,12 +12,12 @@ export default defineConfig({
   srcDir: 'src',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/lemon-template-docs/favicon.svg', type: 'image/svg+xml' }],
     [
       'link',
       {
         rel: 'alternate icon',
-        href: '/favicon.ico',
+        href: '/lemon-template-docs/favicon.ico',
         type: 'image/png',
         sizes: '16x16',
       },
@@ -204,8 +205,5 @@ export default defineConfig({
   ignoreDeadLinks: [
     // 忽略所有 localhost 链接
     /^https?:\/\/localhost/,
-    (url) => {
-      return url.toLowerCase().includes('ignore');
-    },
   ],
 });
