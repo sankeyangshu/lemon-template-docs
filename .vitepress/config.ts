@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'LemonTemplate',
+  description: 'Lemon Template 官方文档',
   cleanUrls: true,
   metaChunk: true,
   lastUpdated: true,
@@ -203,5 +204,8 @@ export default defineConfig({
   ignoreDeadLinks: [
     // 忽略所有 localhost 链接
     /^https?:\/\/localhost/,
+    (url) => {
+      return url.toLowerCase().includes('ignore');
+    },
   ],
 });

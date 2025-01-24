@@ -41,4 +41,4 @@
 
 ## 许可证
 
-[MIT](./LICENSE) License © 2023-PRESENT [sankeyangshu](https://github.com/sankeyangshu)
+MIT License © 2023-PRESENT [sankeyangshu](https://github.com/sankeyangshu)

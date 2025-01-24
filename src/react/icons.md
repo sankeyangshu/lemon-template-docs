@@ -55,7 +55,7 @@ export default () => {
 
 1. 在 [icones](https://icones.js.org/) 搜索图标，在里面找到你需要的图标，例如 `github`，然后点击该图标查看详情，复制红框里的值，例如 `mdi:github`。
 
-![mdi-github](../images/mdi-github.png)
+![mdi-github](../assets/mdi-github.png)
 
 2. 在你的组件中使用 `IconifyIcon` 组件，将 `mdi:github` 传入 `icon` 属性即可，例如：
 
