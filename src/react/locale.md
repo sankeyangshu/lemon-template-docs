@@ -1,23 +1,23 @@
-# 多语言
+# Internationalization
 
-本项目内置了多语言支持，基于 `i18next` 和 `react-i18next` 实现。你可以在 `src/locales/modules` 目录下添加多语言文件，项目会自动加载并应用。
+This project has built-in multi-language support based on `i18next` and `react-i18next`. You can add language files in the `src/locales/modules` directory, and the project will automatically load and apply them.
 
-## 配置说明
+## Configuration Description
 
-### 默认语言
+### Default Language
 
-默认语言配置为 `zh-CN`，可以在 `index.ts` 文件中通过 `defaultLanguage` 修改：
+The default language is set to `zh-CN`, which can be modified through `defaultLanguage` in the `index.ts` file:
 
 ```typescript
-// 默认使用的语言
+// Default language to use
 const defaultLanguage = 'zh-CN';
 ```
 
-### 语言资源
+### Language Resources
 
-多语言资源文件位于 `src/locales/modules` 目录下，使用 JSON 格式定义语言内容。例如：
+Multi-language resource files are located in the `src/locales/modules` directory, using JSON format to define language content. For example:
 
-- **英文语言文件**：`en-US.json`
+- **English language file**: `en-US.json`
 
   ```json
   {
@@ -27,7 +27,7 @@ const defaultLanguage = 'zh-CN';
   }
   ```
 
-- **中文语言文件**：`zh-CN.json`
+- **Chinese language file**: `zh-CN.json`
   ```json
   {
     "message": {
@@ -36,7 +36,7 @@ const defaultLanguage = 'zh-CN';
   }
   ```
 
-这些资源会在 `index.ts` 文件中通过 `resources` 对象注册：
+These resources are registered through the `resources` object in the `index.ts` file:
 
 ```typescript
 const resources = {
@@ -45,11 +45,11 @@ const resources = {
 };
 ```
 
-## 使用方式
+## Usage
 
-### 在 React 组件中使用
+### Using in React Components
 
-在 React 组件中，可以通过 `useTranslation` Hook 使用多语言功能。例如：
+In React components, you can use multi-language functionality through the `useTranslation` Hook. For example:
 
 ```tsx
 import React from 'react';
@@ -64,9 +64,9 @@ const App = () => {
 export default App;
 ```
 
-### 在非组件文件中使用
+### Using in Non-Component Files
 
-在非组件文件（如工具函数或服务文件）中，可以直接使用 `i18n` 实例调用多语言方法。例如：
+In non-component files (such as utility functions or service files), you can directly call multi-language methods using the `i18n` instance. For example:
 
 ```typescript
 import { i18n } from '@/locales';
@@ -74,7 +74,7 @@ import { i18n } from '@/locales';
 console.log(i18n.t('message.hello'));
 ```
 
-## 相关链接
+## Related Links
 
-- [i18next 官方文档](https://www.i18next.com/)
-- [react-i18next 官方文档](https://react.i18next.com/)
+- [i18next Official Documentation](https://www.i18next.com/)
+- [react-i18next Official Documentation](https://react.i18next.com/)

@@ -6,14 +6,14 @@ titleTemplate: Out of the box mobile web application template
 
 hero:
   name: LemonTemplate
-  text: 开箱即用的移动 web 应用模板
-  tagline: 基于 Vue/React、Vite6、TypeScript 和 UnoCSS
+  text: Out of the box mobile web application template
+  tagline: Based on Vue/React, Vite6, TypeScript and UnoCSS
   actions:
     - theme: brand
-      text: 快速开始
+      text: Quick Start
       link: /guide/
     - theme: alt
-      text: 在GitHub上查看
+      text: View on GitHub
       link: https://github.com/sankeyangshu/lemon-template-docs
   image:
     src: /logo.svg
@@ -21,21 +21,21 @@ hero:
 
 features:
   - icon: ✅
-    title: 专注您的业务
-    details: 选择合适的模板，即可轻松创建移动 Web 应用，专注于业务逻辑开发
+    title: Focus on Your Business
+    details: Select a suitable template to easily create mobile web applications and focus on business logic development
   - icon: 🚀
-    title: 多框架支持
-    details: 支持 Vue3 和 React，让您可灵活选择前端开发技术栈，快速进行业务代码的开发和构建
+    title: Multiple Framework Support
+    details: Support Vue3 and React, allowing you to flexibly choose your front-end development tech stack for rapid business code development and building
   - icon: 🛠️
     title: TypeScript
-    details: 严格的类型检查，易于团队开发和维护
+    details: Strict type checking, making it easy for team development and maintenance
   - icon: 🎨
-    title: 优质的 UI 组件库
-    details: 使用 Vant 组件库，提供丰富的移动端组件，帮助你快速搭建漂亮的用户界面
+    title: High-Quality UI Component Library
+    details: Utilize the Vant component library, providing rich mobile components to help you quickly build beautiful user interfaces
   - icon: 🔩
-    title: 主题配置
-    details: 内置丰富的主题配置，轻松结合 UnoCSS进行拓展
+    title: Theme Configuration
+    details: Built-in rich theme configurations, easily extensible with UnoCSS integration
   - icon: 📝
-    title: 丰富的功能示例
-    details: 包含国际化、图标、KeepAlive、Unocss、Echarts等多个实用功能示例
+    title: Rich Feature Examples
+    details: Includes practical examples of internationalization, icons, KeepAlive, UnoCSS, Echarts, and more
 ---

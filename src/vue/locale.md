@@ -1,8 +1,8 @@
-# 多语言
+# Internationalization
 
-模版内置了多语言支持，你可以在 `src/locales/modules` 目录下添加多语言文件，模版会自动加载并应用。
+The template has built-in multi-language support. You can add language files in the `src/locales/modules` directory, and the template will automatically load and apply them.
 
-`vue` 组件 里面使用方式如下：
+Here's how to use it in `vue` components:
 
 ```vue
 <template>
@@ -18,14 +18,14 @@ console.log(t('message.hello'));
 </script>
 ```
 
-非vue组件 里面怎么使用呢？比如 ts 文件，使用方式如下：
+How to use it in non-vue components? For example, in ts files, use it like this:
 
 ```ts
-import { i18n } from '@/locales';
+import { i18n } from 'locales';
 
 console.log(i18n.global.t('message.hello'));
 ```
 
-## 相关链接
+## Related Links
 
-- [Vue I18n 官方文档](https://vue-i18n.intlify.dev/)
+- [Vue I18n Official Documentation](https://vue-i18n.intlify.dev/)

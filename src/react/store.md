@@ -1,17 +1,17 @@
-# 状态
+# State
 
-本项目使用了 `zustand` 作为状态管理工具，并结合了 `zustand/middleware` 提供的持久化存储功能。以下是一个计数器管理的示例，涵盖了状态定义、操作方法以及持久化存储的配置。
+This project uses `zustand` as the state management tool, combined with the persistence storage functionality provided by `zustand/middleware`. Below is an example of counter management, covering state definition, operation methods, and persistence storage configuration.
 
-## 示例代码
+## Example Code
 
-以下是计数器管理的 `zustand` 配置，用于管理计数状态及其操作。
+Here's the `zustand` configuration for counter management, used to manage count state and its operations.
 
 ```typescript
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 /**
- * 计数器store类型
+ * Counter store type
  */
 export interface CountStoreType {
   count: number;
@@ -23,44 +23,44 @@ export interface CountStoreType {
 export const useCountStore = create<CountStoreType>()(
   persist(
     (set) => ({
-      count: 0, // 计数器初始值
+      count: 0, // Initial counter value
 
-      increment: () => set((state) => ({ count: state.count + 1 })), // 增加计数
-      decrement: () => set((state) => ({ count: state.count - 1 })), // 减少计数
-      reset: () => set({ count: 0 }), // 重置计数
+      increment: () => set((state) => ({ count: state.count + 1 })), // Increase count
+      decrement: () => set((state) => ({ count: state.count - 1 })), // Decrease count
+      reset: () => set({ count: 0 }), // Reset count
     }),
     {
-      // 进行持久化存储
-      name: 'countStorage', // 本地存储的名称
+      // Persistence storage
+      name: 'countStorage', // Local storage name
     }
   )
 );
 ```
 
-## 说明
+## Description
 
-### 状态字段
+### State Fields
 
-- **`count`**：当前计数值，默认为 `0`。
+- **`count`**: Current count value, defaults to `0`.
 
-### 方法
+### Methods
 
-- **`increment`**：增加计数值，当前值加 `1`。
-- **`decrement`**：减少计数值，当前值减 `1`。
-- **`reset`**：重置计数值为 `0`。
+- **`increment`**: Increase count value, adds `1` to current value.
+- **`decrement`**: Decrease count value, subtracts `1` from current value.
+- **`reset`**: Reset count value to `0`.
 
-### 持久化存储
+### Persistence Storage
 
-通过 `zustand/middleware` 的 `persist` 方法实现状态持久化：
+Implements state persistence through the `persist` method from `zustand/middleware`:
 
-- **存储名称**：`countStorage`
-- **存储方式**：默认使用 `localStorage`，可根据需求自定义存储方式。
+- **Storage Name**: `countStorage`
+- **Storage Method**: Uses `localStorage` by default, can be customized according to needs.
 
-## 使用方式
+## Usage
 
-### 引入状态管理
+### Import State Management
 
-在需要使用计数器状态的组件中，直接通过 `useCountStore` 获取状态和方法。例如：
+In components where you need to use counter state, directly get state and methods through `useCountStore`. For example:
 
 ```typescript
 import React from 'react';
@@ -77,10 +77,10 @@ const Counter = () => {
 
   return (
     <div>
-      <h1>当前计数：{count}</h1>
-      <button onClick={increment}>增加</button>
-      <button onClick={decrement}>减少</button>
-      <button onClick={reset}>重置</button>
+      <h1>Current Count: {count}</h1>
+      <button onClick={increment}>Increase</button>
+      <button onClick={decrement}>Decrease</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
@@ -88,27 +88,27 @@ const Counter = () => {
 export default Counter;
 ```
 
-## 注意事项
+## Notes
 
-1. **持久化存储的配置**：
+1. **Persistence Storage Configuration**:
 
-   - 持久化存储默认使用 `localStorage`，如果需要使用其他存储方式（如 `sessionStorage`），可以在 `persist` 的配置中指定 `storage`：
+   - Persistence storage uses `localStorage` by default. If you need to use other storage methods (like `sessionStorage`), you can specify `storage` in the `persist` configuration:
      ```typescript
      persist(
        (set) => ({
-         // 状态定义
+         // State definition
        }),
        {
          name: 'countStorage',
-         storage: sessionStorage, // 使用 sessionStorage
+         storage: sessionStorage, // Use sessionStorage
        }
      );
      ```
 
-2. **状态管理的分离**：
-   - 根据功能模块拆分状态管理文件，例如将计数器管理放在 `count.ts`，其他模块（如用户信息、设置等）可以单独创建对应的 `store` 文件。
+2. **State Management Separation**:
+   - Split state management files according to functional modules, for example, put counter management in `count.ts`, other modules (like user information, settings, etc.) can create corresponding `store` files separately.
 
-## 相关链接
+## Related Links
 
-- [Zustand 官方文档](https://docs.pmnd.rs/zustand/getting-started/introduction)
-- [Zustand 持久化中间件](https://docs.pmnd.rs/zustand/integrations/persisting-store-data)
+- [Zustand Official Documentation](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [Zustand Persistence Middleware](https://docs.pmnd.rs/zustand/integrations/persisting-store-data)

@@ -1,55 +1,55 @@
-# 路由
+# Router
 
-本文档详细说明了项目中路由的设计与实现，包括路由文件结构、核心功能、路由守卫、工具函数以及类型定义等内容。
+This document provides a detailed explanation of the routing design and implementation in the project, including router file structure, core functionality, route guards, utility functions, and type definitions.
 
-## 路由文件结构
+## Router File Structure
 
-项目中的路由文件分布如下：
+The router files in the project are distributed as follows:
 
-- **`index.tsx`**：核心路由配置文件，定义了所有的路由规则。
-- **`authGuard.tsx`**：路由守卫文件，用于处理权限校验。
-- **`index.ts`**：工具函数文件，包含路由相关的辅助函数。
-- **`lazyLoad.tsx`**：封装的懒加载实现，用于优化路由加载性能。
-- **`routeType.ts`**：路由类型定义文件，用于约束路由的结构和元信息。
+- **`index.tsx`**: Core router configuration file, defining all routing rules.
+- **`authGuard.tsx`**: Route guard file for handling permission validation.
+- **`index.ts`**: Utility functions file containing router-related helper functions.
+- **`lazyLoad.tsx`**: Encapsulated lazy loading implementation for optimizing route loading performance.
+- **`routeType.ts`**: Router type definition file for constraining route structure and meta information.
 
-## 核心路由配置
+## Core Router Configuration
 
-核心路由配置位于 `index.tsx`，通过 `constantRoutes` 定义了项目的所有公共路由。
+Core router configuration is located in `index.tsx`, where `constantRoutes` defines all public routes of the project.
 
-### 公共路由
+### Public Routes
 
-公共路由分为以下几类：
+Public routes are divided into the following categories:
 
-1. **重定向路由**：
+1. **Redirect Routes**:
 
-   - `path: '/'`：默认重定向到 `/home`。
+   - `path: '/'`: Default redirect to `/home`.
 
-2. **主要页面路由**：
+2. **Main Page Routes**:
 
-   - `/login`：登录页面。
-   - `/register`：注册页面。
-   - `/forgetPassword`：忘记密码页面。
-   - `/home`：首页，带有 TabBar。
-   - `/example`：示例页面，带有 TabBar。
-   - `/mine`：我的页面，带有 TabBar，隐藏顶部导航栏。
-   - `/theme`：主题设置页面。
+   - `/login`: Login page.
+   - `/register`: Registration page.
+   - `/forgetPassword`: Forgot password page.
+   - `/home`: Home page, with TabBar.
+   - `/example`: Example page, with TabBar.
+   - `/mine`: My page, with TabBar, hidden top navigation bar.
+   - `/theme`: Theme settings page.
 
-3. **示例功能路由**：
-   - `/mock`：Mock 数据演示页面。
-   - `/echarts`：Echarts 图表演示页面。
-   - `/icon`：图标示例页面。
-   - `/keepAlive`：支持 KeepAlive 缓存的页面。
+3. **Example Feature Routes**:
+   - `/mock`: Mock data demonstration page.
+   - `/echarts`: Echarts chart demonstration page.
+   - `/icon`: Icon example page.
+   - `/keepAlive`: Page supporting KeepAlive caching.
 
-每个路由可以通过 `meta` 字段定义额外的信息，例如标题、图标、是否显示在 TabBar 中等。
+Each route can define additional information through the `meta` field, such as title, icon, whether to show in TabBar, etc.
 
-路由示例：
+Route example:
 
 ```tsx
 {
   path: '/home',
   element: lazyLoad(lazy(() => import('@/views/Home'))),
   meta: {
-    title: '首页',
+    title: 'Home',
     key: 'Home',
     icon: 'HomeO',
     iconType: 'react-vant',
@@ -59,26 +59,26 @@
 }
 ```
 
-## 路由守卫
+## Route Guards
 
-路由守卫文件 `authGuard.tsx` 实现了权限校验逻辑，确保用户访问受限页面时的安全性。
+The route guard file `authGuard.tsx` implements permission validation logic to ensure security when users access restricted pages.
 
-### 核心逻辑
+### Core Logic
 
-1. **白名单**：定义了无需权限即可访问的路由，例如登录、注册、忘记密码页面。
+1. **Whitelist**: Defines routes that can be accessed without permissions, such as login, registration, forgot password pages.
 
    ```tsx
    const whiteList = ['/login', '/register', '/forgetPassword'];
    ```
 
-2. **权限校验**：
+2. **Permission Validation**:
 
-   - 如果用户已登录但尝试访问登录页面，则重定向到首页。
-   - 如果用户未登录且访问非白名单页面，则重定向到登录页面。
+   - If user is logged in but tries to access the login page, redirects to home page.
+   - If user is not logged in and accesses a non-whitelist page, redirects to login page.
 
-3. **动态设置页面标题**：根据路由的 `meta.title` 动态设置页面标题。
+3. **Dynamic Page Title Setting**: Dynamically sets page title based on route's `meta.title`.
 
-示例代码：
+Example code:
 
 ```tsx
 if (hasToken) {
@@ -92,13 +92,13 @@ if (hasToken) {
 }
 ```
 
-## 工具函数
+## Utility Functions
 
-工具函数位于 `index.ts` 文件中，提供了以下功能：
+Utility functions are located in the `index.ts` file, providing the following functionality:
 
-### 过滤 TabBar 路由
+### Filter TabBar Routes
 
-`filterTabBar` 函数用于过滤出需要显示在 TabBar 上的路由。
+The `filterTabBar` function is used to filter out routes that need to be shown on the TabBar.
 
 ```tsx
 export const filterTabBar = (routers: RouteObjectType[]) => {
@@ -118,9 +118,9 @@ export const filterTabBar = (routers: RouteObjectType[]) => {
 };
 ```
 
-### 路由查询
+### Route Search
 
-`searchRoute` 函数用于根据路径查询对应的路由对象。
+The `searchRoute` function is used to search for the corresponding route object based on the path.
 
 ```tsx
 export const searchRoute = (path: string, routes: RouteObjectType[] = []): RouteObjectType => {
@@ -136,9 +136,9 @@ export const searchRoute = (path: string, routes: RouteObjectType[] = []): Route
 };
 ```
 
-### 过滤 KeepAlive 路由
+### Filter KeepAlive Routes
 
-`filterKeepAlive` 函数用于过滤出需要缓存的路由。
+The `filterKeepAlive` function is used to filter out routes that need to be cached.
 
 ```tsx
 export const filterKeepAlive = (routers: RouteObjectType[]) => {
@@ -158,11 +158,11 @@ export const filterKeepAlive = (routers: RouteObjectType[]) => {
 };
 ```
 
-## 懒加载实现
+## Lazy Loading Implementation
 
-懒加载功能由 `lazyLoad.tsx` 实现，使用 `React.Suspense` 包裹动态加载的组件，并提供加载中的占位符。
+Lazy loading functionality is implemented by `lazyLoad.tsx`, using `React.Suspense` to wrap dynamically loaded components and providing a loading placeholder.
 
-示例代码：
+Example code:
 
 ```tsx
 const lazyLoad = (Component: LazyExoticComponent<any>): ReactNode => {
@@ -174,58 +174,58 @@ const lazyLoad = (Component: LazyExoticComponent<any>): ReactNode => {
 };
 ```
 
-调用示例：
+Usage example:
 
 ```tsx
 element: lazyLoad(lazy(() => import('@/views/Home')));
 ```
 
-## 路由类型定义
+## Route Type Definitions
 
-路由类型定义位于 `routeType.ts` 文件中，主要定义了路由对象的结构和元信息。
+Route type definitions are located in the `routeType.ts` file, mainly defining the structure and meta information of route objects.
 
-### `MetaType` 路由元信息
+### `MetaType` Route Meta Information
 
-`MetaType` 定义了路由的元信息字段，例如标题、图标、是否缓存等：
+`MetaType` defines meta information fields for routes, such as title, icon, whether to cache, etc.:
 
 ```tsx
 export interface MetaType {
-  title: string; // 路由标题
-  icon?: string; // 菜单图标
-  iconType?: string; // 图标类型
-  tabBar?: boolean; // 是否显示在底部导航栏
-  hiddenNavBar?: boolean; // 是否隐藏顶部导航栏
-  key?: string; // 路由唯一标识
-  keepAlive?: boolean; // 是否缓存
-  i18n?: string; // 国际化 key
+  title: string; // Route title
+  icon?: string; // Menu icon
+  iconType?: string; // Icon type
+  tabBar?: boolean; // Whether to show in bottom navigation bar
+  hiddenNavBar?: boolean; // Whether to hide top navigation bar
+  key?: string; // Route unique identifier
+  keepAlive?: boolean; // Whether to cache
+  i18n?: string; // Internationalization key
 }
 ```
 
-### `RouteObjectType` 路由对象
+### `RouteObjectType` Route Object
 
-`RouteObjectType` 定义了路由的完整结构，包括路径、组件、子路由等：
+`RouteObjectType` defines the complete structure of a route, including path, component, child routes, etc.:
 
 ```tsx
 export interface RouteObjectType {
-  path?: string; // 路由路径
-  element?: React.ReactNode; // 路由组件
-  children?: RouteObjectType[]; // 子路由
-  meta?: MetaType; // 路由元信息
-  keepAlive?: boolean; // 是否缓存
-  isLink?: string; // 是否为外部链接
+  path?: string; // Route path
+  element?: React.ReactNode; // Route component
+  children?: RouteObjectType[]; // Child routes
+  meta?: MetaType; // Route meta information
+  keepAlive?: boolean; // Whether to cache
+  isLink?: string; // Whether it's an external link
 }
 ```
 
-## 总结
+## Summary
 
-本项目的路由设计具有以下特点：
+The routing design of this project has the following characteristics:
 
-1. **模块化**：路由配置、守卫、工具函数、类型定义分离，便于维护。
-2. **动态化**：通过 `meta` 字段实现动态标题、图标等配置。
-3. **性能优化**：支持懒加载和路由缓存（KeepAlive）。
-4. **安全性**：通过路由守卫实现权限控制。
-5. **类型约束**：通过 TypeScript 类型定义，确保路由配置的规范性。
+1. **Modular**: Separation of route configuration, guards, utility functions, and type definitions for easy maintenance.
+2. **Dynamic**: Dynamic configuration of titles, icons, etc., through `meta` field.
+3. **Performance Optimization**: Support for lazy loading and route caching (KeepAlive).
+4. **Security**: Permission control through route guards.
+5. **Type Constraints**: Ensuring route configuration standardization through TypeScript type definitions.
 
-## 相关链接
+## Related Links
 
-- [React Router 官方文档](https://reactrouter.com/home)
+- [React Router Official Documentation](https://reactrouter.com/home)

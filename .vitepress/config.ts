@@ -1,10 +1,19 @@
 import { defineConfig } from 'vitepress';
+import zh from './locales/zh';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en',
+      dir: 'src/en',
+      title: 'LemonTemplate',
+      description: 'Lemon Template official documentation',
+    },
+    zh,
+  },
   base: '/lemon-template-docs/',
-  title: 'LemonTemplate',
-  description: 'Lemon Template 官方文档',
   cleanUrls: true,
   metaChunk: true,
   lastUpdated: true,
@@ -38,7 +47,7 @@ export default defineConfig({
       },
     ],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:locale', content: 'zh' }],
+    ['meta', { property: 'og:locale', content: 'en' }],
     [
       'meta',
       {
@@ -52,11 +61,10 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/logo.svg', width: 24, height: 24 },
 
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '指引', link: '/guide/' },
+      { text: 'Guide', link: '/guide/' },
       {
-        text: '项目模板',
+        text: 'Templates',
         items: [
           {
             text: 'lemon-template-vue',
@@ -69,39 +77,39 @@ export default defineConfig({
         ],
       },
       {
-        text: '链接',
+        text: 'Links',
         items: [
           {
-            text: '预览',
+            text: 'Preview',
             items: [
               {
-                text: '在线预览(Vue)',
+                text: 'Live Demo (Vue)',
                 link: 'https://lemon-template-vue.vercel.app',
               },
               {
-                text: '在线预览(React)',
+                text: 'Live Demo (React)',
                 link: 'https://lemon-template-react.vercel.app',
               },
             ],
           },
           {
-            text: '源码仓库',
+            text: 'Source Code',
             items: [
               {
-                text: 'Github(Vue模版)',
+                text: 'Github (Vue Template)',
                 link: 'https://github.com/sankeyangshu/lemon-template-vue',
               },
               {
-                text: 'Github(React模版)',
+                text: 'Github (React Template)',
                 link: 'https://github.com/sankeyangshu/lemon-template-react',
               },
             ],
           },
           {
-            text: '文档',
+            text: 'Documentation',
             items: [
               {
-                text: '文档源码',
+                text: 'Documentation Source',
                 link: 'https://github.com/sankeyangshu/lemon-template-docs',
               },
             ],
@@ -113,16 +121,16 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: '开始',
+          text: 'Getting Started',
           items: [
             {
-              text: '简介',
+              text: 'Introduction',
               link: '/guide/',
             },
           ],
         },
         {
-          text: '移动模板',
+          text: 'Mobile Templates',
           items: [
             {
               text: 'lemon-template-vue',
@@ -137,31 +145,31 @@ export default defineConfig({
       ],
       '/vue/': [
         {
-          text: 'Vue 模板',
+          text: 'Vue Template',
           items: [
-            { text: '介绍', link: '/vue/' },
-            { text: '快速开始', link: '/vue/quick-start' },
-            { text: '样式', link: '/vue/style' },
-            { text: '图标', link: '/vue/icon' },
-            { text: '多语言', link: '/vue/locale' },
-            { text: '状态', link: '/vue/store' },
-            { text: '路由', link: '/vue/router' },
-            { text: '请求', link: '/vue/request' },
+            { text: 'Introduction', link: '/vue/' },
+            { text: 'Quick Start', link: '/vue/quick-start' },
+            { text: 'Styling', link: '/vue/style' },
+            { text: 'Icons', link: '/vue/icon' },
+            { text: 'Localization', link: '/vue/locale' },
+            { text: 'State Management', link: '/vue/store' },
+            { text: 'Router', link: '/vue/router' },
+            { text: 'HTTP Requests', link: '/vue/request' },
           ],
         },
       ],
       '/react/': [
         {
-          text: 'React 模板',
+          text: 'React Template',
           items: [
-            { text: '介绍', link: '/react/' },
-            { text: '快速开始', link: '/react/quick-start' },
-            { text: '样式', link: '/react/style' },
-            { text: '图标', link: '/react/icons' },
-            { text: '多语言', link: '/react/locale' },
-            { text: '状态', link: '/react/store' },
-            { text: '路由', link: '/react/router' },
-            { text: '请求', link: '/react/request' },
+            { text: 'Introduction', link: '/react/' },
+            { text: 'Quick Start', link: '/react/quick-start' },
+            { text: 'Styling', link: '/react/style' },
+            { text: 'Icons', link: '/react/icons' },
+            { text: 'Localization', link: '/react/locale' },
+            { text: 'State Management', link: '/react/store' },
+            { text: 'Router', link: '/react/router' },
+            { text: 'HTTP Requests', link: '/react/request' },
           ],
         },
       ],
@@ -179,26 +187,26 @@ export default defineConfig({
     },
 
     outline: {
-      label: '页面导航',
+      label: 'On this page',
     },
 
     editLink: {
       pattern: 'https://github.com/sankeyangshu/lemon-docs/edit/main/:path',
-      text: '在 GitHub 上编辑此页面',
+      text: 'Edit this page on GitHub',
     },
 
     lastUpdated: {
-      text: '最后更新于',
+      text: 'Last updated on',
     },
 
     docFooter: {
-      prev: '上一页',
-      next: '下一页',
+      prev: 'Prev page',
+      next: 'Next page',
     },
 
     footer: {
-      message: '基于 MIT 许可发布',
-      copyright: '版权所有 © 2023-PRESENT sankeyangshu',
+      message: 'Publish under the MIT license',
+      copyright: 'Copyright © 2023-PRESENT sankeyangshu',
     },
   },
 

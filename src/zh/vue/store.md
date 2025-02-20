@@ -1,6 +1,6 @@
-# State
+# 状态
 
-The template has built-in `Pinia` + `pinia-plugin-persistedstate` (data persistence plugin), and provides a simple example.
+模版已经内置了 `Pinia` + `pinia-plugin-persistedstate`(数据持久化插件)，并提供一个简单的示例。
 
 ```ts
 import { defineStore } from 'pinia';
@@ -27,12 +27,12 @@ export const useCountStore = defineStore(
     };
   },
   {
-    // Write true if persistence is needed, write false (or remove this configuration item) if persistence is not needed
+    // 如果需要持久化就写 true, 不需要持久化就写 false（或者去掉这个配置项）
     persist: true,
   }
 );
 ```
 
-## Related Links
+## 相关链接
 
-- [Pinia Official Documentation](https://pinia.vuejs.org/)
+- [Pinia 官方文档](https://pinia.vuejs.org/zh/)
