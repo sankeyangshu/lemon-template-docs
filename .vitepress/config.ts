@@ -58,11 +58,11 @@ export default defineConfig({
         items: [
           {
             text: 'lemon-mobile-react',
-            link: '/react/',
+            link: '/mobile-react/',
           },
           {
             text: 'lemon-mobile-vue',
-            link: '/vue/',
+            link: '/mobile-vue/',
           },
         ],
       },
@@ -124,42 +124,42 @@ export default defineConfig({
           items: [
             {
               text: 'lemon-mobile-react',
-              link: '/react/',
+              link: '/mobile-react/',
             },
             {
               text: 'lemon-mobile-vue',
-              link: '/vue/',
+              link: '/mobile-vue/',
             },
           ],
         },
       ],
-      '/react/': [
+      '/mobile-react/': [
         {
-          text: 'React 模板',
+          text: 'lemon-mobile-react',
           items: [
-            { text: '介绍', link: '/react/' },
-            { text: '快速开始', link: '/react/quick-start' },
-            { text: '样式', link: '/react/style' },
-            { text: '图标', link: '/react/icons' },
-            { text: '多语言', link: '/react/locale' },
-            { text: '状态', link: '/react/store' },
-            { text: '路由', link: '/react/router' },
-            { text: '请求', link: '/react/request' },
+            { text: '介绍', link: '/mobile-react/' },
+            { text: '快速开始', link: '/mobile-react/quick-start' },
+            { text: '样式', link: '/mobile-react/style' },
+            { text: '图标', link: '/mobile-react/icons' },
+            { text: '多语言', link: '/mobile-react/locale' },
+            { text: '状态', link: '/mobile-react/store' },
+            { text: '路由', link: '/mobile-react/router' },
+            { text: '请求', link: '/mobile-react/request' },
           ],
         },
       ],
-      '/vue/': [
+      '/mobile-vue/': [
         {
-          text: 'Vue 模板',
+          text: 'lemon-mobile-vue',
           items: [
-            { text: '介绍', link: '/vue/' },
-            { text: '快速开始', link: '/vue/quick-start' },
-            { text: '样式', link: '/vue/style' },
-            { text: '图标', link: '/vue/icon' },
-            { text: '多语言', link: '/vue/locale' },
-            { text: '状态', link: '/vue/store' },
-            { text: '路由', link: '/vue/router' },
-            { text: '请求', link: '/vue/request' },
+            { text: '介绍', link: '/mobile-vue/' },
+            { text: '快速开始', link: '/mobile-vue/quick-start' },
+            { text: '样式', link: '/mobile-vue/style' },
+            { text: '图标', link: '/mobile-vue/icon' },
+            { text: '多语言', link: '/mobile-vue/locale' },
+            { text: '状态', link: '/mobile-vue/store' },
+            { text: '路由', link: '/mobile-vue/router' },
+            { text: '请求', link: '/mobile-vue/request' },
           ],
         },
       ],

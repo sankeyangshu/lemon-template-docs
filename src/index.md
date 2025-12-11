@@ -1,19 +1,16 @@
 ---
 layout: home
 
-title: LemonTemplate
-titleTemplate: Out of the box mobile web application template
-
 hero:
   name: LemonTemplate
-  text: Out of the box mobile web application template
-  tagline: Based on Vue/React, Vite6, TypeScript and UnoCSS
+  text: 开箱即用的移动端、小程序和中后台模板
+  tagline: 告别重复配置！覆盖移动端H5/小程序/中后台等主流场景，基于现代前端开发工具链，助你快速完成业务开发，享受飞一般的体验
   actions:
     - theme: brand
-      text: Quick Start
+      text: 快速开始
       link: /guide/
     - theme: alt
-      text: View on GitHub
+      text: GitHub
       link: https://github.com/sankeyangshu/lemon-template-docs
   image:
     src: /logo.svg
@@ -21,21 +18,21 @@ hero:
 
 features:
   - icon: ✅
-    title: Focus on Your Business
-    details: Select a suitable template to easily create mobile web applications and focus on business logic development
+    title: 专注您的业务
+    details: 选择合适的模板，即可轻松创建移动端H5、小程序和中后台管理系统
   - icon: 🚀
-    title: Multiple Framework Support
-    details: Support Vue3 and React, allowing you to flexibly choose your front-end development tech stack for rapid business code development and building
+    title: 多框架支持
+    details: 支持 React 和 Vue3等现代前端框架，让您可灵活选择前端开发技术栈，快速进行业务代码的开发和构建
   - icon: 🛠️
     title: TypeScript
-    details: Strict type checking, making it easy for team development and maintenance
+    details: 严格的类型检查，易于团队开发和维护
   - icon: 🎨
-    title: High-Quality UI Component Library
-    details: Utilize the Vant component library, providing rich mobile components to help you quickly build beautiful user interfaces
+    title: TailwindCSS
+    details: 高性能且开发的实用程序优先 CSS 框架。
   - icon: 🔩
-    title: Theme Configuration
-    details: Built-in rich theme configurations, easily extensible with UnoCSS integration
+    title: 主题配置
+    details: 内置丰富的主题配置，轻松结合 TailwindCSS 进行拓展
   - icon: 📝
-    title: Rich Feature Examples
-    details: Includes practical examples of internationalization, icons, KeepAlive, UnoCSS, Echarts, and more
+    title: 丰富的功能示例
+    details: 包含国际化、图标、TailwindCSS、Echarts等多个实用功能示例
 ---
