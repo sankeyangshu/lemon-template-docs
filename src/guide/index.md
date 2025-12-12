@@ -17,12 +17,12 @@
 - **移动端React:**
   - [预览地址](https://lemon-mobile-react.vercel.app)
   - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-react)
-  - [文档地址](../react/index.md)
+  - [文档地址](../mobile-react/index.md)
 
 - **移动端Vue:**
   - [预览地址](https://lemon-mobile-vue.vercel.app)
   - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-vue)
-  - [文档地址](../vue/index.md)
+  - [文档地址](../mobile-vue/index.md)
 
 ## 文档
 
