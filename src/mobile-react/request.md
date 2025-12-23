@@ -422,7 +422,7 @@ function LoginForm() {
 
 **乐观更新：**
 
-```ts
+```typescript
 const updateTodoMutation = useMutation({
   mutationFn: updateTodo,
   // 在请求发送前乐观更新 UI
