@@ -37,6 +37,10 @@
   - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-vue)
   - [文档地址](https://lemon-template-docs.vercel.app/mobile-vue/)
 
+- **小程序UniApp:**
+  - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-uniapp)
+  - [文档地址](https://lemon-template-docs.vercel.app/mobile-uniapp/)
+
 ## 浏览器支持
 
 - 本地开发推荐使用 Chrome 最新版浏览器 [Download](https://www.google.com/intl/zh-CN/chrome/)。

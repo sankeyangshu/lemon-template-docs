@@ -64,6 +64,10 @@ export default defineConfig({
             text: 'lemon-mobile-vue',
             link: '/mobile-vue/',
           },
+          {
+            text: 'lemon-mobile-uniapp',
+            link: '/mobile-uniapp/',
+          },
         ],
       },
       {
@@ -92,6 +96,10 @@ export default defineConfig({
               {
                 text: '移动端(Vue)',
                 link: 'https://github.com/sankeyangshu/lemon-mobile-vue',
+              },
+              {
+                text: '小程序(UniApp)',
+                link: 'https://github.com/sankeyangshu/lemon-mobile-uniapp',
               },
             ],
           },
@@ -130,6 +138,10 @@ export default defineConfig({
               text: 'lemon-mobile-vue',
               link: '/mobile-vue/',
             },
+            {
+              text: 'lemon-mobile-uniapp',
+              link: '/mobile-uniapp/',
+            },
           ],
         },
       ],
@@ -161,6 +173,21 @@ export default defineConfig({
             // { text: '状态管理', link: '/mobile-vue/store' },
             // { text: '路由', link: '/mobile-vue/router' },
             // { text: '网络请求', link: '/mobile-vue/request' },
+          ],
+        },
+      ],
+      '/mobile-uniapp/': [
+        {
+          text: 'lemon-mobile-uniapp',
+          items: [
+            { text: '介绍', link: '/mobile-uniapp/' },
+            { text: '快速开始', link: '/mobile-uniapp/quick-start' },
+            { text: '样式', link: '/mobile-uniapp/style' },
+            { text: '路由', link: '/mobile-uniapp/router' },
+            { text: '网络请求', link: '/mobile-uniapp/request' },
+            { text: '图标', link: '/mobile-uniapp/icon' },
+            { text: '国际化', link: '/mobile-uniapp/locale' },
+            { text: '状态管理', link: '/mobile-uniapp/store' },
           ],
         },
       ],

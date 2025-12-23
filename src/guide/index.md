@@ -24,6 +24,10 @@
   - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-vue)
   - [文档地址](../mobile-vue/index.md)
 
+- **小程序UniApp:**
+  - [Github 仓库](https://github.com/sankeyangshu/lemon-mobile-uniapp)
+  - [文档地址](../mobile-uniapp/index.md)
+
 ## 文档
 
 - 文档地址为 [lemon-template-docs](https://github.com/sankeyangshu/lemon-template-docs)，采用 Vitepress 开发。如发现文档有误，欢迎提 pr 帮助我们改进。
