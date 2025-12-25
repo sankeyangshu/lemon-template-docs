@@ -752,6 +752,99 @@ interface UseUploadOptions<T extends Media> {
 }
 ```
 
+### 文件验证
+
+`useUpload` 内置文件验证逻辑：
+
+```typescript
+// 文件验证函数
+function validateFile(file: FileInfo) {
+  // 文件大小验证
+  if (file.size > maxSize) {
+    const errorMsg = i18n.global.t('upload.fileSizeExceeded', {
+      size: (maxSize / 1024 / 1024).toFixed(2),
+    });
+    uni.showToast({
+      title: errorMsg,
+      icon: 'none',
+    });
+    throw new HttpError(errorMsg, ApiStatus.error);
+  }
+
+  // 文件格式验证
+  if (accept.length > 0 && !accept.includes('*')) {
+    const ext = file.name?.split('.').pop()?.toLowerCase()
+      || file.tempFilePath.split('.').pop()?.toLowerCase();
+
+    const isValid = accept.some(type =>
+      type === '*' || type.toLowerCase() === ext);
+
+    if (!isValid) {
+      const errorMsg = i18n.global.t('upload.fileFormatNotSupported', {
+        formats: accept.join(', '),
+      });
+      uni.showToast({ title: errorMsg, icon: 'none' });
+      throw new HttpError(errorMsg, ApiStatus.error);
+    }
+  }
+}
+```
+
+**验证项：**
+
+- **文件大小验证**: 超过 `maxSize` 时提示错误
+- **文件格式验证**: 检查文件扩展名是否在 `accept` 列表中
+
+### 批量上传
+
+`useUpload` 内置批量上传多个文件：
+
+```typescript
+/**
+ * 批量上传
+ */
+async function uploadFiles(files: FileInfo[]): Promise<UploadResultData[]> {
+  const uploadResults: UploadResultData[] = [];
+  const errors: HttpError[] = [];
+
+  for (let i = 0; i < files.length; i++) {
+    try {
+      const result = await uploadSingleFile(files[i]);
+      // result 已经是解析后的业务数据
+      uploadResults.push(result);
+
+      // 更新整体进度
+      const overallProgress = Math.round(((i + 1) / files.length) * 100);
+      progress.value = overallProgress;
+      onProgress?.(overallProgress);
+    }
+    catch (err) {
+      const error = err instanceof HttpError
+        ? err
+        : new HttpError(
+            err instanceof Error ? err.message : i18n.global.t('upload.uploadFailed'),
+            ApiStatus.error,
+          );
+      errors.push(error);
+      console.error(`文件 ${i + 1} 上传失败:`, error.toLogData());
+    }
+  }
+
+  // 如果有错误，抛出第一个错误
+  if (errors.length > 0 && uploadResults.length === 0) {
+    throw errors[0];
+  }
+
+  // 如果部分失败，在控制台警告
+  if (errors.length > 0) {
+    console.warn(`${errors.length}/${files.length} 个文件上传失败`);
+  }
+
+  // 返回业务数据数组
+  return uploadResults;
+}
+```
+
 ### 基础用法
 
 **上传图片：**
@@ -819,99 +912,6 @@ function uploadFile() {
   run();
 }
 </script>
-```
-
-### 文件验证
-
-`useUpload` 内置文件验证逻辑：
-
-```typescript
-// 文件验证函数
-function validateFile(file: FileInfo) {
-  // 文件大小验证
-  if (file.size > maxSize) {
-    const errorMsg = i18n.global.t('upload.fileSizeExceeded', {
-      size: (maxSize / 1024 / 1024).toFixed(2),
-    });
-    uni.showToast({
-      title: errorMsg,
-      icon: 'none',
-    });
-    throw new HttpError(errorMsg, ApiStatus.error);
-  }
-
-  // 文件格式验证
-  if (accept.length > 0 && !accept.includes('*')) {
-    const ext = file.name?.split('.').pop()?.toLowerCase()
-      || file.tempFilePath.split('.').pop()?.toLowerCase();
-
-    const isValid = accept.some(type =>
-      type === '*' || type.toLowerCase() === ext);
-
-    if (!isValid) {
-      const errorMsg = i18n.global.t('upload.fileFormatNotSupported', {
-        formats: accept.join(', '),
-      });
-      uni.showToast({ title: errorMsg, icon: 'none' });
-      throw new HttpError(errorMsg, ApiStatus.error);
-    }
-  }
-}
-```
-
-**验证项：**
-
-- **文件大小验证**: 超过 `maxSize` 时提示错误
-- **文件格式验证**: 检查文件扩展名是否在 `accept` 列表中
-
-### 批量上传
-
-支持批量上传多个文件：
-
-```typescript
-/**
- * 批量上传
- */
-async function uploadFiles(files: FileInfo[]): Promise<UploadResultData[]> {
-  const uploadResults: UploadResultData[] = [];
-  const errors: HttpError[] = [];
-
-  for (let i = 0; i < files.length; i++) {
-    try {
-      const result = await uploadSingleFile(files[i]);
-      // result 已经是解析后的业务数据
-      uploadResults.push(result);
-
-      // 更新整体进度
-      const overallProgress = Math.round(((i + 1) / files.length) * 100);
-      progress.value = overallProgress;
-      onProgress?.(overallProgress);
-    }
-    catch (err) {
-      const error = err instanceof HttpError
-        ? err
-        : new HttpError(
-            err instanceof Error ? err.message : i18n.global.t('upload.uploadFailed'),
-            ApiStatus.error,
-          );
-      errors.push(error);
-      console.error(`文件 ${i + 1} 上传失败:`, error.toLogData());
-    }
-  }
-
-  // 如果有错误，抛出第一个错误
-  if (errors.length > 0 && uploadResults.length === 0) {
-    throw errors[0];
-  }
-
-  // 如果部分失败，在控制台警告
-  if (errors.length > 0) {
-    console.warn(`${errors.length}/${files.length} 个文件上传失败`);
-  }
-
-  // 返回业务数据数组
-  return uploadResults;
-}
 ```
 
 ### 上传控制
